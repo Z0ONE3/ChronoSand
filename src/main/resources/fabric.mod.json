@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "chrono",
+  "version": "${version}",
+  "name": "Chrono",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/chrono/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "chrono.chrono.client.ChronoDataGenerator"
+    ],
+    "client": [
+      "chrono.chrono.client.ChronoClient"
+    ],
+    "main": [
+      "chrono.chrono.Chrono"
+    ]
+  },
+  "mixins": [
+    "chrono.mixins.json",
+    {
+      "config": "chrono.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
